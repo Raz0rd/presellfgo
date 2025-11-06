@@ -11,7 +11,7 @@ import { DevToolsBlocker } from "@/components/DevToolsBlocker"
 
 export const metadata: Metadata = {
   title: "Recarga Jogo",
-  description: "Site oficial de recarga para jogos! Compre diamantes Free Fire, créditos Delta Force e moedas Haikyu com segurança. Recarga rápida, bônus exclusivos e preços promocionais. Centro de recarga oficial de jogos mobile.",
+  description: "Site oficial de recarga para jogos! Compre diamantes Free Fire, coins Delta Force e Haikyu com segurança. Recarga rápida, bônus exclusivos e preços promocionais. Centro de recarga oficial de jogos mobile.",
   keywords: [
     // Free Fire - Principal
     "recarga free fire",
@@ -35,18 +35,15 @@ export const metadata: Metadata = {
     "delta force coins",
     "comprar coins delta force",
     "delta force recarga rapida",
-    "creditos delta force barato",
     "delta force recarga pix",
     
     // Haikyu - Principal
-    "recarga haikyu",
     "comprar moedas haikyu",
     "haikyu recarga oficial",
     "site recarga haikyu",
     "haikyu fly high recarga",
     "diamantes estelares haikyu",
     "haikyu recarga rapida",
-    "moedas haikyu barato",
     
     // Long-tail (alta conversão)
     "onde comprar diamantes free fire",
@@ -60,7 +57,6 @@ export const metadata: Metadata = {
     "recarga haikyu confiavel",
     
     // Geral - Conversão
-    "recarga jogo",
     "site de recarga de jogos",
     "recarga jogos mobile",
     "comprar creditos jogos",
@@ -90,9 +86,9 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Recarga Jogo",
-    description: "🔥 Compre diamantes Free Fire, créditos Delta Force e moedas Haikyu com segurança! Recarga oficial com bônus exclusivos e preços promocionais.",
+    description: "🔥 Compre diamantes Free Fire, recargas pro jogo Delta Force e Haikyu com segurança! Recarga oficial com bônus exclusivos e preços promocionais.",
     url: "/",
-    siteName: "Centro de Recarga Oficial",
+    siteName: "Centro de Recarga",
     locale: "pt_BR",
     type: "website",
     images: [
@@ -100,14 +96,14 @@ export const metadata: Metadata = {
         url: "/images/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Centro de Recarga Oficial - Free Fire, Delta Force, Haikyu"
+        alt: "Centro de Recarga - Free Fire, Delta Force, Haikyu"
       }
     ]
   },
   twitter: {
     card: "summary_large_image",
     title: "Recarga Jogo",
-    description: "🔥 Compre diamantes Free Fire, créditos Delta Force e moedas Haikyu com segurança! Recarga oficial.",
+    description: "🔥 Compre diamantes Free Fire, recarga pros jogos Delta Force e Haikyu com segurança! Recarga oficial.",
     images: ["/images/twitter-card.jpg"],
   },
   robots: {

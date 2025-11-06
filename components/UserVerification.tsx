@@ -33,7 +33,7 @@ export default function UserVerification({ onVerificationComplete }: UserVerific
   // Perguntas do Quiz
   const quizQuestions = [
     {
-      question: "🔥 Qual é o seu estilo de jogo no Free Fire?",
+      question: "🔮 Qual é o seu estilo de jogo no Free Fire?",
       options: [
         { text: "Líder de Squad - Comando meu time", points: { lider: 3, estrategista: 1, atirador: 0, rusher: 0 } },
         { text: "Sniper Silencioso - Elimino de longe", points: { atirador: 3, estrategista: 1, lider: 0, rusher: 0 } },
@@ -69,7 +69,7 @@ export default function UserVerification({ onVerificationComplete }: UserVerific
       ]
     },
     {
-      question: "🔥 Qual personagem te representa?",
+      question: "🔮 Qual personagem te representa?",
       options: [
         { text: "Chrono - Controle do tempo", points: { estrategista: 3, lider: 0, atirador: 0, rusher: 0 } },
         { text: "Wukong - Agilidade ninja", points: { rusher: 3, lider: 0, atirador: 0, estrategista: 0 } },
@@ -82,7 +82,7 @@ export default function UserVerification({ onVerificationComplete }: UserVerific
   // Perfis de resultado
   const quizProfiles: Record<string, { title: string; description: string; emoji: string }> = {
     lider: {
-      title: "🔥 O LÍDER DA FOGUEIRA",
+      title: "🔮 O LÍDER DA FOGUEIRA",
       description: "Você nasceu para comandar! Seu squad te segue até o fim. Estratégia e liderança são suas armas.",
       emoji: "👑"
     },
@@ -418,24 +418,58 @@ export default function UserVerification({ onVerificationComplete }: UserVerific
 
   return (
     <div className="fixed inset-0 z-[9999] overflow-hidden" style={{
-      background: 'linear-gradient(135deg, #0a1f1a 0%, #0f2f27 50%, #0a1f1a 100%)'
+      background: 'linear-gradient(135deg, #0a0a0a 0%, #1a1410 50%, #0a0a0a 100%)'
     }}>
-      {/* Efeitos de fundo - Verde/Esmeralda */}
+      {/* Efeitos de fundo luxuoso */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Efeito de luz suave animado */}
-        <div className="absolute inset-0 opacity-10" style={{
-          backgroundImage: 'radial-gradient(circle at 50% 50%, #10b981 0%, transparent 70%)',
-          animation: 'pulse 4s ease-in-out infinite'
+        {/* Padrão art deco sutil */}
+        <div className="absolute inset-0 opacity-5" style={{
+          backgroundImage: 'repeating-linear-gradient(45deg, #ffd700 0px, #ffd700 1px, transparent 1px, transparent 20px), repeating-linear-gradient(-45deg, #ffd700 0px, #ffd700 1px, transparent 1px, transparent 20px)',
+          backgroundSize: '40px 40px'
         }} />
         
-        {/* Círculos decorativos verde/esmeralda */}
-        <div className="absolute -top-20 -right-20 w-64 h-64 bg-gradient-to-br from-emerald-600/20 to-teal-500/10 rounded-full blur-3xl" />
-        <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-gradient-to-tr from-teal-500/20 to-emerald-600/10 rounded-full blur-3xl" />
+        {/* Ornamento art deco canto superior esquerdo */}
+        <div className="absolute top-0 left-0 w-40 h-40 opacity-40">
+          <svg viewBox="0 0 100 100" className="w-full h-full text-yellow-600">
+            <path d="M0,0 L50,0 L50,10 L10,10 L10,50 L0,50 Z" fill="currentColor" className="animate-pulse"/>
+            <circle cx="25" cy="25" r="8" stroke="currentColor" strokeWidth="2" fill="none"/>
+            <path d="M15,15 L35,35 M35,15 L15,35" stroke="currentColor" strokeWidth="1.5"/>
+          </svg>
+        </div>
+        
+        {/* Ornamento art deco canto superior direito */}
+        <div className="absolute top-0 right-0 w-40 h-40 opacity-40 transform scale-x-[-1]">
+          <svg viewBox="0 0 100 100" className="w-full h-full text-amber-500">
+            <path d="M0,0 L50,0 L50,10 L10,10 L10,50 L0,50 Z" fill="currentColor" className="animate-pulse" style={{animationDelay: '0.5s'}}/>
+            <circle cx="25" cy="25" r="8" stroke="currentColor" strokeWidth="2" fill="none"/>
+            <path d="M15,15 L35,35 M35,15 L15,35" stroke="currentColor" strokeWidth="1.5"/>
+          </svg>
+        </div>
+        
+        {/* Ornamento art deco canto inferior esquerdo */}
+        <div className="absolute bottom-0 left-0 w-40 h-40 opacity-40 transform scale-y-[-1]">
+          <svg viewBox="0 0 100 100" className="w-full h-full text-yellow-500">
+            <path d="M0,0 L50,0 L50,10 L10,10 L10,50 L0,50 Z" fill="currentColor" className="animate-pulse" style={{animationDelay: '1s'}}/>
+            <rect x="15" y="15" width="20" height="20" stroke="currentColor" strokeWidth="2" fill="none"/>
+          </svg>
+        </div>
+        
+        {/* Ornamento art deco canto inferior direito */}
+        <div className="absolute bottom-0 right-0 w-40 h-40 opacity-40 transform scale-[-1]">
+          <svg viewBox="0 0 100 100" className="w-full h-full text-amber-600">
+            <path d="M0,0 L50,0 L50,10 L10,10 L10,50 L0,50 Z" fill="currentColor" className="animate-pulse" style={{animationDelay: '1.5s'}}/>
+            <rect x="15" y="15" width="20" height="20" stroke="currentColor" strokeWidth="2" fill="none"/>
+          </svg>
+        </div>
+        
+        {/* Brilhos dourados */}
+        <div className="absolute -top-20 -right-20 w-64 h-64 bg-gradient-to-br from-yellow-600/20 to-amber-500/10 rounded-full blur-3xl animate-pulse-slow" />
+        <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-gradient-to-tr from-amber-500/20 to-yellow-600/10 rounded-full blur-3xl animate-pulse-slow" style={{animationDelay: '2s'}} />
       </div>
 
-      {/* Pulso de luz suave do centro */}
+      {/* Brilho dourado central */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <div className="w-96 h-96 rounded-full bg-gradient-to-r from-emerald-600/10 via-teal-500/10 to-emerald-600/10 animate-pulse-slow"></div>
+        <div className="w-96 h-96 rounded-full bg-gradient-to-r from-yellow-600/10 via-amber-500/10 to-yellow-600/10 animate-pulse-slow"></div>
       </div>
 
       <style jsx global>{`
@@ -459,6 +493,17 @@ export default function UserVerification({ onVerificationComplete }: UserVerific
           from { transform: rotate(360deg); }
           to { transform: rotate(0deg); }
         }
+        @keyframes glow-pulse {
+          0%, 100% { box-shadow: 0 0 20px rgba(255, 215, 0, 0.5); }
+          50% { box-shadow: 0 0 40px rgba(255, 215, 0, 0.8), 0 0 60px rgba(255, 193, 7, 0.6); }
+        }
+        @keyframes shimmer {
+          0% { transform: translateX(-100%); }
+          100% { transform: translateX(100%); }
+        }
+        .animate-shimmer {
+          animation: shimmer 3s ease-in-out infinite;
+        }
         .animate-pulse-slow {
           animation: pulse-slow 4s ease-in-out infinite;
         }
@@ -467,6 +512,9 @@ export default function UserVerification({ onVerificationComplete }: UserVerific
         }
         .animate-spin-reverse {
           animation: spin-reverse 1s linear infinite;
+        }
+        .animate-glow {
+          animation: glow-pulse 2s ease-in-out infinite;
         }
         .cursor-fire,
         .cursor-fire * {
@@ -483,77 +531,97 @@ export default function UserVerification({ onVerificationComplete }: UserVerific
           
           {/* Tela Inicial */}
           {step === 'initial' && (
-            <div className="bg-gradient-to-br from-emerald-950 via-teal-950 to-emerald-950 rounded-3xl shadow-2xl border-2 border-emerald-500/30 overflow-hidden backdrop-blur-xl">
-              {/* Header */}
-              <div className="relative h-32 bg-gradient-to-r from-emerald-600 via-teal-500 to-green-600 flex items-center justify-center overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-teal-500/10 to-black/30" />
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(16,185,129,0.3),transparent_50%)] animate-pulse"></div>
-                <h1 className="relative text-3xl font-bold text-white text-center drop-shadow-2xl flex items-center gap-3">
-                  <span className="text-4xl">💎</span>
+            <div className="bg-gradient-to-br from-black/95 via-neutral-900/95 to-black/95 rounded-2xl shadow-2xl border border-yellow-600/60 overflow-hidden backdrop-blur-xl animate-glow">
+              {/* Header compacto luxuoso */}
+              <div className="relative h-20 bg-gradient-to-r from-yellow-600 via-amber-500 to-yellow-600 flex items-center justify-center overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-yellow-500/10 to-black/40" />
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,215,0,0.3),transparent_50%)] animate-pulse"></div>
+                {/* Ornamentos no header */}
+                <div className="absolute top-2 left-2 w-4 h-4 border-2 border-yellow-200 rotate-45"></div>
+                <div className="absolute top-2 right-2 w-4 h-4 border-2 border-yellow-200 rotate-45"></div>
+                <div className="absolute inset-0 overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer"></div>
+                </div>
+                <h1 className="relative text-2xl font-bold text-white text-center drop-shadow-2xl flex items-center gap-2">
+                  <span className="text-3xl">👑</span>
                   <span>Bem-vindo!</span>
-                  <span className="text-4xl">💎</span>
+                  <span className="text-3xl">👑</span>
                 </h1>
               </div>
 
-              {/* Conteúdo */}
-              <div className="p-8 text-center">
-                {/* Elemento CSS Animado Customizado */}
-                <div className="relative w-24 h-24 mx-auto mb-6">
-                  {/* Círculo externo girando */}
-                  <div className="absolute inset-0 rounded-full border-4 border-transparent border-t-emerald-400 border-r-teal-400 animate-spin"></div>
-                  {/* Círculo do meio girando reverso */}
-                  <div className="absolute inset-2 rounded-full border-4 border-transparent border-b-teal-400 border-l-green-400 animate-spin-reverse"></div>
-                  {/* Círculo interno pulsante */}
-                  <div className="absolute inset-4 rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 animate-pulse shadow-lg shadow-emerald-500/50"></div>
-                  {/* Estrela central */}
+              {/* Conteúdo compacto */}
+              <div className="p-5 text-center">
+                {/* Ícone premium com ornamentos */}
+                <div className="relative w-16 h-16 mx-auto mb-4">
+                  {/* Moldura dourada externa */}
+                  <div className="absolute inset-0 animate-spin" style={{animationDuration: '4s'}}>
+                    <svg viewBox="0 0 100 100" className="w-full h-full text-yellow-500">
+                      <rect x="10" y="10" width="80" height="80" stroke="currentColor" strokeWidth="3" fill="none"/>
+                      <circle cx="50" cy="50" r="35" stroke="currentColor" strokeWidth="2" fill="none"/>
+                    </svg>
+                  </div>
+                  {/* Estrela interna */}
+                  <div className="absolute inset-3 animate-spin-reverse" style={{animationDuration: '3s'}}>
+                    <svg viewBox="0 0 100 100" className="w-full h-full text-amber-500">
+                      <polygon points="50,15 61,45 92,45 67,63 78,92 50,73 22,92 33,63 8,45 39,45" stroke="currentColor" strokeWidth="2" fill="none"/>
+                    </svg>
+                  </div>
+                  {/* Núcleo dourado pulsante */}
+                  <div className="absolute inset-6 rounded-full bg-gradient-to-br from-yellow-500 to-amber-600 animate-pulse shadow-lg shadow-yellow-500/50"></div>
+                  {/* Símbolo central */}
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-3xl animate-bounce" style={{ animationDelay: '0.2s' }}>⭐</div>
+                    <div className="text-2xl animate-bounce" style={{ animationDelay: '0.2s' }}>💎</div>
                   </div>
                 </div>
-                <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-400 to-green-400 mb-4">
+                <h2 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-amber-400 to-yellow-400 mb-3">
                   Acesse Ofertas Exclusivas
                 </h2>
-                <p className="text-emerald-100 mb-6 leading-relaxed text-base">
+                <p className="text-amber-100 mb-4 leading-relaxed text-sm">
                   Valide sua identidade e tenha acesso a descontos especiais e bônus exclusivos!
                 </p>
                 
-                <div className="bg-gradient-to-br from-emerald-500/20 via-teal-500/15 to-green-500/20 border-2 border-emerald-400/50 rounded-2xl p-6 mb-6 backdrop-blur-md shadow-2xl shadow-emerald-500/30">
-                  <p className="text-emerald-300 font-bold text-xl mb-3 flex items-center justify-center gap-2">
-                    <span className="text-3xl">🎁</span>
+                <div className="bg-gradient-to-br from-yellow-600/20 via-amber-500/15 to-yellow-600/20 border border-yellow-500/60 rounded-xl p-4 mb-4 backdrop-blur-md shadow-lg shadow-yellow-500/30 relative overflow-hidden">
+                  {/* Ornamentos art deco */}
+                  <div className="absolute top-0 right-0 w-12 h-12 border-t-2 border-r-2 border-yellow-400/40"></div>
+                  <div className="absolute bottom-0 left-0 w-12 h-12 border-b-2 border-l-2 border-amber-400/40"></div>
+                  <div className="absolute top-0 left-0 w-3 h-3 bg-yellow-400 rounded-full"></div>
+                  <div className="absolute bottom-0 right-0 w-3 h-3 bg-amber-400 rounded-full"></div>
+                  <p className="text-yellow-300 font-bold text-lg mb-2 flex items-center justify-center gap-2 relative z-10">
+                    <span className="text-2xl">🏆</span>
                     <span>Recompensa Exclusiva</span>
-                    <span className="text-3xl">🎁</span>
+                    <span className="text-2xl">🏆</span>
                   </p>
-                  <p className="text-emerald-50 text-base leading-relaxed">
-                    Valide sua conta e ganhe <span className="font-bold text-teal-300 text-lg">70% de desconto</span> na sua recarga!
+                  <p className="text-amber-50 text-sm leading-relaxed relative z-10">
+                    Valide sua conta e ganhe <span className="font-bold text-yellow-300 text-base">70% de desconto</span> na sua recarga!
                   </p>
                 </div>
 
                 <button
                   onClick={handleInitialCheck}
-                  className="w-full bg-gradient-to-r from-emerald-600 via-teal-500 to-green-600 hover:from-green-600 hover:via-emerald-500 hover:to-teal-600 text-white font-bold text-lg py-4 px-8 rounded-2xl transition-all duration-300 shadow-2xl shadow-emerald-500/50 hover:shadow-teal-500/70 hover:scale-[1.05] border-2 border-emerald-400/60 hover:border-teal-300 relative overflow-hidden group"
+                  className="w-full bg-gradient-to-r from-yellow-600 via-amber-500 to-yellow-600 hover:from-yellow-500 hover:via-amber-400 hover:to-yellow-500 text-black font-bold text-base py-3 px-6 rounded-xl transition-all duration-300 shadow-xl shadow-yellow-500/50 hover:shadow-yellow-400/70 hover:scale-[1.03] border border-yellow-400/60 hover:border-yellow-300 relative overflow-hidden group"
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
-                  <span className="relative z-10 flex items-center justify-center gap-3">
-                    <span className="text-2xl">🚀</span>
+                  <span className="relative z-10 flex items-center justify-center gap-2">
+                    <span className="text-xl">⭐</span>
                     <span>Começar Agora</span>
-                    <span className="text-2xl">✨</span>
+                    <span className="text-xl">✨</span>
                   </span>
                 </button>
 
                 {/* Links de Termos e Políticas */}
                 <div className="mt-4 text-center text-xs">
-                  <p className="mb-2 text-emerald-300">Ao continuar, você concorda com nossos</p>
+                  <p className="mb-2 text-amber-300">Ao continuar, você concorda com nossos</p>
                   <div className="flex items-center justify-center gap-3">
                     <button 
                       onClick={() => setShowTermsModal(true)}
-                      className="text-teal-300 hover:text-emerald-200 underline transition-colors font-semibold"
+                      className="text-yellow-300 hover:text-amber-200 underline transition-colors font-semibold"
                     >
                       Termos de Uso
                     </button>
-                    <span className="text-emerald-500">•</span>
+                    <span className="text-yellow-500">•</span>
                     <button 
                       onClick={() => setShowPrivacyModal(true)}
-                      className="text-teal-300 hover:text-emerald-200 underline transition-colors font-semibold"
+                      className="text-yellow-300 hover:text-amber-200 underline transition-colors font-semibold"
                     >
                       Política de Privacidade
                     </button>
@@ -685,17 +753,17 @@ export default function UserVerification({ onVerificationComplete }: UserVerific
 
           {/* Tela do QUIZ */}
           {step === 'quiz' && (
-            <div className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 rounded-3xl shadow-2xl border border-blue-500/20 overflow-hidden backdrop-blur-xl">
+            <div className="bg-gradient-to-br from-black via-neutral-900 to-black rounded-3xl shadow-2xl border border-yellow-500/30 overflow-hidden backdrop-blur-xl">
               {/* Progress Bar */}
-              <div className="h-1.5 bg-slate-950">
+              <div className="h-1.5 bg-black">
                 <div 
-                  className="h-full bg-gradient-to-r from-blue-600 to-cyan-500 transition-all duration-300"
+                  className="h-full bg-gradient-to-r from-yellow-600 to-amber-500 transition-all duration-300"
                   style={{ width: `${((currentQuestion + 1) / quizQuestions.length) * 100}%` }}
                 />
               </div>
 
               {/* Header */}
-              <div className="bg-gradient-to-r from-blue-600 to-cyan-500 p-4 flex justify-between items-center">
+              <div className="bg-gradient-to-r from-yellow-600 to-amber-500 p-4 flex justify-between items-center">
                 <div className="text-white font-semibold">
                   Pergunta {currentQuestion + 1}/{quizQuestions.length}
                 </div>
@@ -712,7 +780,7 @@ export default function UserVerification({ onVerificationComplete }: UserVerific
                 {isTransitioning ? (
                   // Loading entre perguntas
                   <div className="flex flex-col items-center justify-center py-20">
-                    <div className="animate-spin rounded-full h-16 w-16 border-4 border-cyan-500 border-t-transparent mb-4"></div>
+                    <div className="animate-spin rounded-full h-16 w-16 border-4 border-yellow-500 border-t-transparent mb-4"></div>
                     <p className="text-white font-semibold">Próxima pergunta...</p>
                   </div>
                 ) : (
@@ -728,9 +796,9 @@ export default function UserVerification({ onVerificationComplete }: UserVerific
                           key={index}
                           onClick={() => handleQuizAnswer(index)}
                           disabled={isTransitioning}
-                          className="w-full bg-gradient-to-r from-slate-800/50 to-slate-700/50 hover:from-blue-600 hover:to-cyan-500 text-white font-medium py-4 px-6 rounded-2xl transition-all duration-200 border border-slate-600/30 hover:border-blue-400/50 text-left hover:scale-[1.02] hover:shadow-lg hover:shadow-blue-500/20 disabled:opacity-50 disabled:cursor-not-allowed"
+                          className="w-full bg-gradient-to-r from-neutral-800/50 to-neutral-700/50 hover:from-yellow-600 hover:to-amber-500 text-white font-medium py-4 px-6 rounded-2xl transition-all duration-200 border border-neutral-600/30 hover:border-yellow-400/50 text-left hover:scale-[1.02] hover:shadow-lg hover:shadow-yellow-500/20 disabled:opacity-50 disabled:cursor-not-allowed"
                         >
-                          <span className="text-blue-400 font-bold mr-3">{String.fromCharCode(65 + index)}.</span>
+                          <span className="text-yellow-400 font-bold mr-3">{String.fromCharCode(65 + index)}.</span>
                           {option.text}
                         </button>
                       ))}
@@ -741,11 +809,56 @@ export default function UserVerification({ onVerificationComplete }: UserVerific
             </div>
           )}
 
+          {/* Modal de Termos de Uso */}
+          {showTermsModal && (
+            <div className="fixed inset-0 z-[10000] bg-black/80 backdrop-blur-sm flex items-center justify-center p-4" onClick={playClickSound}>
+              <div className="bg-gradient-to-br from-black/95 via-neutral-900/95 to-black/95 rounded-2xl shadow-2xl max-w-2xl w-full mx-4 max-h-[90vh] overflow-y-auto border-2 border-yellow-500/50">
+                <div className="p-6">
+                  <div className="flex items-center justify-between mb-6 bg-gradient-to-r from-yellow-600 via-amber-500 to-yellow-600 -m-6 p-6 rounded-t-2xl">
+                    <h3 className="text-2xl font-bold text-white flex items-center gap-2">
+                      <span className="text-3xl">📜</span>
+                      <span>Termos de Uso</span>
+                    </h3>
+                    <button 
+                      onClick={() => { playClickSound(); setShowTermsModal(false); }}
+                      className="text-white hover:text-yellow-400 transition-colors bg-white/10 hover:bg-white/20 rounded-lg p-2"
+                    >
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </button>
+                  </div>
+                  
+                  <div className="space-y-4 text-amber-100 text-sm leading-relaxed">
+                    <p><strong className="text-yellow-300 text-base">1. Aceitação dos Termos:</strong> Ao aceitar estes termos, você concorda com todas as condições de uso deste site oficial de recargas e nossa política de privacidade.</p>
+                    
+                    <p><strong className="text-yellow-300 text-base">2. Usuários Verificados:</strong> Este site é exclusivo para jogadores reais e verificados. É terminantemente proibido o uso de bots, sistemas automatizados ou contas falsas.</p>
+                    
+                    <p><strong className="text-yellow-300 text-base">3. Ofertas Exclusivas:</strong> Usuários verificados têm acesso a descontos especiais, promoções exclusivas e bônus. As ofertas são limitadas e sujeitas a disponibilidade.</p>
+                    
+                    <p><strong className="text-yellow-300 text-base">4. Transações Seguras:</strong> Garantimos 100% de segurança em todas as transações através de sistemas criptografados de última geração.</p>
+                    
+                    <p><strong className="text-yellow-300 text-base">5. Responsabilidade:</strong> O usuário é responsável por manter suas credenciais seguras e por todas as atividades realizadas em sua conta.</p>
+                    
+                    <p><strong className="text-yellow-300 text-base">6. Modificações:</strong> Reservamos o direito de modificar estes termos a qualquer momento. Usuários serão notificados sobre mudanças importantes.</p>
+                  </div>
+                  
+                  <button 
+                    onClick={() => { playClickSound(); setShowTermsModal(false); }}
+                    className="mt-6 w-full bg-gradient-to-r from-yellow-600 via-amber-500 to-yellow-600 hover:from-yellow-500 hover:via-amber-400 hover:to-yellow-500 text-black font-bold py-4 px-4 rounded-xl transition-all duration-300 shadow-lg shadow-yellow-500/50 hover:shadow-yellow-400/70 hover:scale-[1.02]"
+                  >
+                    ✅ Entendi
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
+
           {/* Tela de RESULTADO */}
           {step === 'result' && (
-            <div className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 rounded-3xl shadow-2xl border border-blue-500/20 overflow-hidden backdrop-blur-xl">
+            <div className="bg-gradient-to-br from-black via-neutral-900 to-black rounded-3xl shadow-2xl border border-yellow-500/30 overflow-hidden backdrop-blur-xl">
               {/* Header com animação */}
-              <div className="relative h-28 bg-gradient-to-r from-blue-600 to-cyan-500 flex items-center justify-center overflow-hidden">
+              <div className="relative h-28 bg-gradient-to-r from-yellow-600 to-amber-500 flex items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/20" />
                 <div className="relative text-center py-3">
                   <div className="text-3xl mb-1">{quizProfiles[quizResult]?.emoji}</div>
@@ -757,29 +870,29 @@ export default function UserVerification({ onVerificationComplete }: UserVerific
 
               {/* Resultado */}
               <article className="p-8 text-center" role="main" aria-label="Resultado do Quiz">
-                <h3 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400 mb-4">
+                <h3 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-amber-400 mb-4">
                   {quizProfiles[quizResult]?.title}
                 </h3>
-                <p className="text-slate-300 text-base mb-8 leading-relaxed">
+                <p className="text-amber-200 text-base mb-8 leading-relaxed">
                   {quizProfiles[quizResult]?.description}
                 </p>
 
                 {/* Recompensa */}
-                <div className="bg-gradient-to-r from-blue-600/20 to-cyan-500/20 rounded-2xl p-6 mb-6 border border-blue-400/30 backdrop-blur-sm">
-                  <div className="text-4xl mb-2">🎁</div>
+                <div className="bg-gradient-to-r from-yellow-600/20 to-amber-500/20 rounded-2xl p-6 mb-6 border border-yellow-400/40 backdrop-blur-sm">
+                  <div className="text-4xl mb-2">👑</div>
                   <h4 className="text-2xl font-bold text-white mb-2">
                     Parabéns!
                   </h4>
-                  <p className="text-slate-200 font-medium text-base mb-3">
+                  <p className="text-amber-100 font-medium text-base mb-3">
                     Você desbloqueou
                   </p>
-                  <div className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400 mb-3">
+                  <div className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-amber-400 mb-3">
                     70% OFF
                   </div>
-                  <p className="text-slate-300 text-sm">
+                  <p className="text-amber-200 text-sm">
                     Desconto exclusivo na sua recarga!
                   </p>
-                  <p className="text-blue-300 text-xs mt-2 font-medium">
+                  <p className="text-yellow-300 text-xs mt-2 font-medium">
                     ⏰ Válido por 24 horas
                   </p>
                 </div>
@@ -787,14 +900,14 @@ export default function UserVerification({ onVerificationComplete }: UserVerific
                 <div className="flex justify-center">
                   <button
                     onClick={handleAcceptReward}
-                    className="bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white font-bold text-lg py-5 px-8 rounded-2xl transition-all duration-200 shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 hover:scale-[1.02]"
+                    className="bg-gradient-to-r from-yellow-600 to-amber-500 hover:from-yellow-700 hover:to-amber-600 text-black font-bold text-lg py-5 px-8 rounded-2xl transition-all duration-200 shadow-lg shadow-yellow-500/30 hover:shadow-yellow-500/50 hover:scale-[1.02]"
                     aria-label="Resgatar desconto de 70% exclusivo"
                   >
-                    Resgatar Meu Desconto ✨
+                    Resgatar Meu Desconto 💎
                   </button>
                 </div>
 
-                <p className="text-slate-500 text-xs mt-4">
+                <p className="text-neutral-500 text-xs mt-4">
                   #Gaming #Quiz #Desconto
                 </p>
               </article>
@@ -803,56 +916,56 @@ export default function UserVerification({ onVerificationComplete }: UserVerific
 
           {/* Tela de Verificação */}
           {step === 'verification' && (
-            <div className="bg-gradient-to-br from-emerald-950 via-teal-950 to-emerald-950 rounded-3xl shadow-2xl border-2 border-emerald-500/30 overflow-hidden backdrop-blur-xl">
+            <div className="bg-gradient-to-br from-black/95 via-neutral-900/95 to-black/95 rounded-3xl shadow-2xl border-2 border-yellow-500/50 overflow-hidden backdrop-blur-xl">
               {/* Header */}
-              <div className="relative h-24 bg-gradient-to-r from-emerald-600 via-teal-500 to-green-600 flex items-center justify-center overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-teal-500/10 to-black/30" />
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(16,185,129,0.3),transparent_50%)] animate-pulse"></div>
+              <div className="relative h-24 bg-gradient-to-r from-yellow-600 via-amber-500 to-yellow-600 flex items-center justify-center overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-yellow-500/10 to-black/30" />
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,215,0,0.3),transparent_50%)] animate-pulse"></div>
                 <h2 className="relative text-xl font-bold text-white text-center drop-shadow-2xl flex items-center gap-2">
-                  <span className="text-2xl">🔐</span>
+                  <span className="text-2xl">👑</span>
                   <span>Validar Identidade</span>
-                  <span className="text-2xl">🔐</span>
+                  <span className="text-2xl">👑</span>
                 </h2>
               </div>
 
               <div className="p-8">
-                <p className="text-emerald-100 text-sm mb-6 text-center">
+                <p className="text-amber-100 text-sm mb-6 text-center">
                   Insira seu ID de jogador para confirmar que você é um usuário real
                 </p>
                 
                 <div className="space-y-4">
                   <div>
-                    <label className="block text-base font-bold mb-3 text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400 flex items-center gap-2">
+                    <label className="block text-base font-bold mb-3 text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-amber-400 flex items-center gap-2">
                       <span className="text-xl">🎮</span>
                       <span>ID do Jogador</span>
-                      <span className="text-xs text-emerald-300 font-normal">(apenas números)</span>
+                      <span className="text-xs text-yellow-300 font-normal">(apenas números)</span>
                     </label>
                     <input
                       type="text"
                       value={playerId}
                       onChange={(e) => setPlayerId(e.target.value.replace(/[^0-9]/g, ''))}
                       placeholder="Digite seu ID do jogo (ex: 5435431)"
-                      className="w-full px-5 py-4 bg-gradient-to-r from-emerald-900/60 to-teal-900/60 border-2 border-emerald-500/40 rounded-2xl text-white text-lg font-bold placeholder-emerald-200 focus:outline-none focus:ring-2 focus:ring-teal-400 focus:border-teal-400 hover:border-emerald-400/70 transition-all duration-300 shadow-lg shadow-emerald-900/20"
+                      className="w-full px-5 py-4 bg-gradient-to-r from-neutral-900/60 to-black/60 border-2 border-yellow-500/40 rounded-2xl text-white text-lg font-bold placeholder-amber-200 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 hover:border-yellow-400/70 transition-all duration-300 shadow-lg shadow-yellow-900/20"
                       disabled={isLoading}
                       maxLength={15}
                     />
                   </div>
                   
-                  <div className="bg-gradient-to-br from-emerald-500/20 via-teal-500/15 to-green-500/20 border-2 border-emerald-400/50 rounded-2xl p-5 backdrop-blur-md shadow-lg shadow-emerald-500/20">
-                    <p className="text-sm text-emerald-300 font-bold mb-3 flex items-center gap-2">
+                  <div className="bg-gradient-to-br from-yellow-600/20 via-amber-500/15 to-yellow-600/20 border-2 border-yellow-400/50 rounded-2xl p-5 backdrop-blur-md shadow-lg shadow-yellow-500/20">
+                    <p className="text-sm text-yellow-300 font-bold mb-3 flex items-center gap-2">
                       <span className="text-lg">⭐</span>
                       <span>Importante:</span>
                     </p>
-                    <p className="text-sm text-emerald-50 mb-3 leading-relaxed">
-                      Digite seu <span className="text-teal-300 font-bold">ID REAL</span> do jogo! IDs falsos ou inválidos não passarão na verificação.
+                    <p className="text-sm text-amber-50 mb-3 leading-relaxed">
+                      Digite seu <span className="text-yellow-300 font-bold">ID REAL</span> do jogo! IDs falsos ou inválidos não passarão na verificação.
                     </p>
-                    <p className="text-xs text-emerald-100 mb-3 bg-emerald-900/40 rounded-lg p-2 border border-emerald-500/30">
-                      📍 <span className="text-teal-300 font-semibold">Encontre seu ID em:</span><br/>
+                    <p className="text-xs text-amber-100 mb-3 bg-neutral-900/40 rounded-lg p-2 border border-yellow-500/40">
+                      📍 <span className="text-yellow-300 font-semibold">Encontre seu ID em:</span><br/>
                       <span className="text-white font-bold ml-4">Configurações → Informações Básicas → ID do Jogador</span>
                     </p>
                     <button
                       onClick={() => setShowTutorial(true)}
-                      className="text-sm text-teal-300 hover:text-emerald-200 underline font-bold flex items-center gap-1"
+                      className="text-sm text-yellow-300 hover:text-amber-200 underline font-bold flex items-center gap-1"
                     >
                       📖 Ver tutorial completo de como encontrar seu ID
                     </button>
@@ -874,8 +987,8 @@ export default function UserVerification({ onVerificationComplete }: UserVerific
                   disabled={isLoading || !playerId.trim()}
                   className={`w-full font-bold text-lg py-5 px-8 rounded-2xl transition-all duration-300 flex items-center justify-center relative overflow-hidden group ${
                     isLoading || !playerId.trim()
-                      ? 'bg-slate-700 text-slate-500 cursor-not-allowed border-2 border-slate-600'
-                      : 'bg-gradient-to-r from-emerald-600 via-teal-500 to-green-600 hover:from-green-600 hover:via-emerald-500 hover:to-teal-600 text-white shadow-2xl shadow-emerald-500/50 hover:shadow-teal-500/70 hover:scale-[1.05] border-2 border-emerald-400/60 hover:border-teal-300'
+                      ? 'bg-neutral-700 text-neutral-500 cursor-not-allowed border-2 border-neutral-600'
+                      : 'bg-gradient-to-r from-yellow-600 via-amber-500 to-yellow-600 hover:from-yellow-500 hover:via-amber-400 hover:to-yellow-500 text-black shadow-2xl shadow-yellow-500/50 hover:shadow-yellow-400/70 hover:scale-[1.05] border-2 border-yellow-400/60 hover:border-yellow-300'
                   }`}
                 >
                   {!isLoading && !(!playerId.trim()) && (
@@ -888,9 +1001,9 @@ export default function UserVerification({ onVerificationComplete }: UserVerific
                     </>
                   ) : (
                     <>
-                      <span className="text-2xl mr-2">🚀</span>
+                      <span className="text-2xl mr-2">👑</span>
                       <span className="relative z-10">Verificar Identidade</span>
-                      <span className="text-2xl ml-2">✨</span>
+                      <span className="text-2xl ml-2">💎</span>
                     </>
                   )}
                 </button>
@@ -904,16 +1017,16 @@ export default function UserVerification({ onVerificationComplete }: UserVerific
       {/* Modal de Termos de Uso */}
       {showTermsModal && (
         <div className="fixed inset-0 z-[10000] bg-black/80 backdrop-blur-sm flex items-center justify-center p-4" onClick={playClickSound}>
-          <div className="bg-gradient-to-br from-emerald-950 via-teal-950 to-emerald-950 rounded-2xl shadow-2xl max-w-2xl w-full mx-4 max-h-[90vh] overflow-y-auto border-2 border-emerald-500/50">
+          <div className="bg-gradient-to-br from-black/95 via-neutral-900/95 to-black/95 rounded-2xl shadow-2xl max-w-2xl w-full mx-4 max-h-[90vh] overflow-y-auto border-2 border-yellow-500/50">
             <div className="p-6">
-              <div className="flex items-center justify-between mb-6 bg-gradient-to-r from-emerald-600 via-teal-500 to-green-600 -m-6 p-6 rounded-t-2xl">
+              <div className="flex items-center justify-between mb-6 bg-gradient-to-r from-yellow-600 via-amber-500 to-yellow-600 -m-6 p-6 rounded-t-2xl">
                 <h3 className="text-2xl font-bold text-white flex items-center gap-2">
                   <span className="text-3xl">📜</span>
                   <span>Termos de Uso</span>
                 </h3>
                 <button 
                   onClick={() => { playClickSound(); setShowTermsModal(false); }}
-                  className="text-white hover:text-emerald-200 transition-colors bg-white/10 hover:bg-white/20 rounded-lg p-2"
+                  className="text-white hover:text-yellow-400 transition-colors bg-white/10 hover:bg-white/20 rounded-lg p-2"
                 >
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                     <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -921,23 +1034,23 @@ export default function UserVerification({ onVerificationComplete }: UserVerific
                 </button>
               </div>
               
-              <div className="space-y-4 text-emerald-100 text-sm leading-relaxed">
-                <p><strong className="text-teal-300 text-base">1. Aceitação dos Termos:</strong> Ao aceitar estes termos, você concorda com todas as condições de uso deste site oficial de recargas e nossa política de privacidade.</p>
+              <div className="space-y-4 text-amber-100 text-sm leading-relaxed">
+                <p><strong className="text-yellow-300 text-base">1. Aceitação dos Termos:</strong> Ao aceitar estes termos, você concorda com todas as condições de uso deste site oficial de recargas e nossa política de privacidade.</p>
                 
-                <p><strong className="text-teal-300 text-base">2. Usuários Verificados:</strong> Este site é exclusivo para jogadores reais e verificados. É terminantemente proibido o uso de bots, sistemas automatizados ou contas falsas.</p>
+                <p><strong className="text-yellow-300 text-base">2. Usuários Verificados:</strong> Este site é exclusivo para jogadores reais e verificados. É terminantemente proibido o uso de bots, sistemas automatizados ou contas falsas.</p>
                 
-                <p><strong className="text-teal-300 text-base">3. Ofertas Exclusivas:</strong> Usuários verificados têm acesso a descontos especiais, promoções exclusivas e bônus. As ofertas são limitadas e sujeitas a disponibilidade.</p>
+                <p><strong className="text-yellow-300 text-base">3. Ofertas Exclusivas:</strong> Usuários verificados têm acesso a descontos especiais, promoções exclusivas e bônus. As ofertas são limitadas e sujeitas a disponibilidade.</p>
                 
-                <p><strong className="text-teal-300 text-base">4. Transações Seguras:</strong> Garantimos 100% de segurança em todas as transações através de sistemas criptografados de última geração.</p>
+                <p><strong className="text-yellow-300 text-base">4. Transações Seguras:</strong> Garantimos 100% de segurança em todas as transações através de sistemas criptografados de última geração.</p>
                 
-                <p><strong className="text-teal-300 text-base">5. Responsabilidade:</strong> O usuário é responsável por manter suas credenciais seguras e por todas as atividades realizadas em sua conta.</p>
+                <p><strong className="text-yellow-300 text-base">5. Responsabilidade:</strong> O usuário é responsável por manter suas credenciais seguras e por todas as atividades realizadas em sua conta.</p>
                 
-                <p><strong className="text-teal-300 text-base">6. Modificações:</strong> Reservamos o direito de modificar estes termos a qualquer momento. Usuários serão notificados sobre mudanças importantes.</p>
+                <p><strong className="text-yellow-300 text-base">6. Modificações:</strong> Reservamos o direito de modificar estes termos a qualquer momento. Usuários serão notificados sobre mudanças importantes.</p>
               </div>
               
               <button 
                 onClick={() => { playClickSound(); setShowTermsModal(false); }}
-                className="mt-6 w-full bg-gradient-to-r from-emerald-600 via-teal-500 to-green-600 hover:from-green-600 hover:via-emerald-500 hover:to-teal-600 text-white font-bold py-4 px-4 rounded-xl transition-all duration-300 shadow-lg shadow-emerald-500/50 hover:shadow-teal-500/70 hover:scale-[1.02]"
+                className="mt-6 w-full bg-gradient-to-r from-cyan-600 via-blue-500 to-purple-600 hover:from-green-600 hover:via-emerald-500 hover:to-teal-600 text-white font-bold py-4 px-4 rounded-xl transition-all duration-300 shadow-lg shadow-cyan-500/50 hover:shadow-teal-500/70 hover:scale-[1.02]"
               >
                 ✅ Entendi
               </button>
@@ -949,16 +1062,16 @@ export default function UserVerification({ onVerificationComplete }: UserVerific
       {/* Modal de Política de Privacidade */}
       {showPrivacyModal && (
         <div className="fixed inset-0 z-[10000] bg-black/80 backdrop-blur-sm flex items-center justify-center p-4" onClick={playClickSound}>
-          <div className="bg-gradient-to-br from-emerald-950 via-teal-950 to-emerald-950 rounded-2xl shadow-2xl max-w-2xl w-full mx-4 max-h-[90vh] overflow-y-auto border-2 border-emerald-500/50">
+          <div className="bg-gradient-to-br from-black/95 via-neutral-900/95 to-black/95 rounded-2xl shadow-2xl max-w-2xl w-full mx-4 max-h-[90vh] overflow-y-auto border-2 border-yellow-500/50">
             <div className="p-6">
-              <div className="flex items-center justify-between mb-6 bg-gradient-to-r from-emerald-600 via-teal-500 to-green-600 -m-6 p-6 rounded-t-2xl">
+              <div className="flex items-center justify-between mb-6 bg-gradient-to-r from-yellow-600 via-amber-500 to-yellow-600 -m-6 p-6 rounded-t-2xl">
                 <h3 className="text-2xl font-bold text-white flex items-center gap-2">
-                  <span className="text-3xl">🔐</span>
+                  <span className="text-3xl">🛡️</span>
                   <span>Política de Privacidade</span>
                 </h3>
                 <button 
                   onClick={() => { playClickSound(); setShowPrivacyModal(false); }}
-                  className="text-white hover:text-emerald-200 transition-colors bg-white/10 hover:bg-white/20 rounded-lg p-2"
+                  className="text-white hover:text-yellow-400 transition-colors bg-white/10 hover:bg-white/20 rounded-lg p-2"
                 >
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                     <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -966,23 +1079,23 @@ export default function UserVerification({ onVerificationComplete }: UserVerific
                 </button>
               </div>
               
-              <div className="space-y-4 text-emerald-100 text-sm leading-relaxed">
-                <p><strong className="text-teal-300 text-base">1. Coleta de Dados:</strong> Coletamos apenas informações necessárias para processar suas recargas: ID do jogador, dados de pagamento e informações de contato. Não compartilhamos dados com terceiros.</p>
+              <div className="space-y-4 text-amber-100 text-sm leading-relaxed">
+                <p><strong className="text-yellow-300 text-base">1. Coleta de Dados:</strong> Coletamos apenas informações necessárias para processar suas recargas: ID do jogador, dados de pagamento e informações de contato. Não compartilhamos dados com terceiros.</p>
                 
-                <p><strong className="text-teal-300 text-base">2. Uso das Informações:</strong> Seus dados são utilizados exclusivamente para: processar recargas, enviar confirmações, oferecer suporte técnico e disponibilizar ofertas personalizadas.</p>
+                <p><strong className="text-yellow-300 text-base">2. Uso das Informações:</strong> Seus dados são utilizados exclusivamente para: processar recargas, enviar confirmações, oferecer suporte técnico e disponibilizar ofertas personalizadas.</p>
                 
-                <p><strong className="text-teal-300 text-base">3. Segurança:</strong> Utilizamos criptografia SSL/TLS e seguimos os mais altos padrões de segurança da indústria para proteger suas informações.</p>
+                <p><strong className="text-yellow-300 text-base">3. Segurança:</strong> Utilizamos criptografia SSL/TLS e seguimos os mais altos padrões de segurança da indústria para proteger suas informações.</p>
                 
-                <p><strong className="text-teal-300 text-base">4. Cookies:</strong> Utilizamos cookies para melhorar sua experiência, lembrar preferências e analisar o tráfego do site de forma anônima.</p>
+                <p><strong className="text-yellow-300 text-base">4. Cookies:</strong> Utilizamos cookies para melhorar sua experiência, lembrar preferências e analisar o tráfego do site de forma anônima.</p>
                 
-                <p><strong className="text-teal-300 text-base">5. Direitos do Usuário:</strong> Você pode solicitar acesso, correção ou exclusão de seus dados a qualquer momento através do nosso suporte.</p>
+                <p><strong className="text-yellow-300 text-base">5. Direitos do Usuário:</strong> Você pode solicitar acesso, correção ou exclusão de seus dados a qualquer momento através do nosso suporte.</p>
                 
-                <p><strong className="text-teal-300 text-base">6. Conformidade LGPD:</strong> Estamos em conformidade com a Lei Geral de Proteção de Dados (LGPD) e respeitamos todos os seus direitos de privacidade.</p>
+                <p><strong className="text-yellow-300 text-base">6. Conformidade LGPD:</strong> Estamos em conformidade com a Lei Geral de Proteção de Dados (LGPD) e respeitamos todos os seus direitos de privacidade.</p>
               </div>
               
               <button 
                 onClick={() => { playClickSound(); setShowPrivacyModal(false); }}
-                className="mt-6 w-full bg-gradient-to-r from-emerald-600 via-teal-500 to-green-600 hover:from-green-600 hover:via-emerald-500 hover:to-teal-600 text-white font-bold py-4 px-4 rounded-xl transition-all duration-300 shadow-lg shadow-emerald-500/50 hover:shadow-teal-500/70 hover:scale-[1.02]"
+                className="mt-6 w-full bg-gradient-to-r from-yellow-600 via-amber-500 to-yellow-600 hover:from-yellow-500 hover:via-amber-400 hover:to-yellow-500 text-black font-bold py-4 px-4 rounded-xl transition-all duration-300 shadow-lg shadow-yellow-500/50 hover:shadow-yellow-400/70 hover:scale-[1.02]"
               >
                 ✅ Entendi
               </button>
