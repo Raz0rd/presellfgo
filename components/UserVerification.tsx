@@ -799,56 +799,56 @@ export default function UserVerification({ onVerificationComplete }: UserVerific
 
           {/* Tela de Verificação */}
           {step === 'verification' && (
-            <div className="bg-gradient-to-br from-emerald-950 via-teal-950 to-emerald-950 rounded-3xl shadow-2xl border-2 border-emerald-500/30 overflow-hidden backdrop-blur-xl">
+            <div className="bg-gradient-to-br from-emerald-950 via-teal-950 to-emerald-950 rounded-2xl sm:rounded-3xl shadow-2xl border-2 border-emerald-500/30 overflow-hidden backdrop-blur-xl">
               {/* Header */}
-              <div className="relative h-24 bg-gradient-to-r from-emerald-600 via-teal-500 to-green-600 flex items-center justify-center overflow-hidden">
+              <div className="relative h-16 sm:h-20 md:h-24 bg-gradient-to-r from-emerald-600 via-teal-500 to-green-600 flex items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent via-teal-500/10 to-black/30" />
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(16,185,129,0.3),transparent_50%)] animate-pulse"></div>
-                <h2 className="relative text-xl font-bold text-white text-center drop-shadow-2xl flex items-center gap-2">
-                  <span className="text-2xl">🔐</span>
+                <h2 className="relative text-base sm:text-lg md:text-xl font-bold text-white text-center drop-shadow-2xl flex items-center gap-1.5 sm:gap-2 px-2">
+                  <span className="text-xl sm:text-2xl">🔐</span>
                   <span>Validar Identidade</span>
-                  <span className="text-2xl">🔐</span>
+                  <span className="text-xl sm:text-2xl">🔐</span>
                 </h2>
               </div>
 
-              <div className="p-8">
-                <p className="text-emerald-100 text-sm mb-6 text-center">
+              <div className="p-4 sm:p-6 md:p-8">
+                <p className="text-emerald-100 text-xs sm:text-sm mb-4 sm:mb-5 md:mb-6 text-center">
                   Insira seu ID de jogador para confirmar que você é um usuário real
                 </p>
                 
-                <div className="space-y-4">
+                <div className="space-y-3 sm:space-y-4">
                   <div>
-                    <label className="block text-base font-bold mb-3 text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400 flex items-center gap-2">
-                      <span className="text-xl">🎮</span>
+                    <label className="block text-sm sm:text-base font-bold mb-2 sm:mb-3 text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400 flex items-center gap-1.5 sm:gap-2">
+                      <span className="text-lg sm:text-xl">🎮</span>
                       <span>ID do Jogador</span>
-                      <span className="text-xs text-emerald-300 font-normal">(apenas números)</span>
+                      <span className="text-[10px] sm:text-xs text-emerald-300 font-normal">(apenas números)</span>
                     </label>
                     <input
                       type="text"
                       value={playerId}
                       onChange={(e) => setPlayerId(e.target.value.replace(/[^0-9]/g, ''))}
-                      placeholder="Digite seu ID do jogo (ex: 5435431)"
-                      className="w-full px-5 py-4 bg-gradient-to-r from-emerald-900/60 to-teal-900/60 border-2 border-emerald-500/40 rounded-2xl text-white text-lg font-bold placeholder-emerald-200 focus:outline-none focus:ring-2 focus:ring-teal-400 focus:border-teal-400 hover:border-emerald-400/70 transition-all duration-300 shadow-lg shadow-emerald-900/20"
+                      placeholder="Digite seu ID (ex: 5435431)"
+                      className="w-full px-3 sm:px-4 md:px-5 py-3 sm:py-3.5 md:py-4 bg-gradient-to-r from-emerald-900/60 to-teal-900/60 border-2 border-emerald-500/40 rounded-xl sm:rounded-2xl text-white text-base sm:text-lg font-bold placeholder-emerald-200 placeholder:text-sm sm:placeholder:text-base focus:outline-none focus:ring-2 focus:ring-teal-400 focus:border-teal-400 hover:border-emerald-400/70 transition-all duration-300 shadow-lg shadow-emerald-900/20"
                       disabled={isLoading}
                       maxLength={15}
                     />
                   </div>
                   
-                  <div className="bg-gradient-to-br from-emerald-500/20 via-teal-500/15 to-green-500/20 border-2 border-emerald-400/50 rounded-2xl p-5 backdrop-blur-md shadow-lg shadow-emerald-500/20">
-                    <p className="text-sm text-emerald-300 font-bold mb-3 flex items-center gap-2">
-                      <span className="text-lg">⭐</span>
+                  <div className="bg-gradient-to-br from-emerald-500/20 via-teal-500/15 to-green-500/20 border-2 border-emerald-400/50 rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-5 backdrop-blur-md shadow-lg shadow-emerald-500/20">
+                    <p className="text-xs sm:text-sm text-emerald-300 font-bold mb-2 sm:mb-3 flex items-center gap-1.5 sm:gap-2">
+                      <span className="text-base sm:text-lg">⭐</span>
                       <span>Importante:</span>
                     </p>
-                    <p className="text-sm text-emerald-50 mb-3 leading-relaxed">
+                    <p className="text-xs sm:text-sm text-emerald-50 mb-2 sm:mb-3 leading-relaxed">
                       Digite seu <span className="text-teal-300 font-bold">ID REAL</span> do jogo! IDs falsos ou inválidos não passarão na verificação.
                     </p>
-                    <p className="text-xs text-emerald-100 mb-3 bg-emerald-900/40 rounded-lg p-2 border border-emerald-500/30">
+                    <p className="text-[10px] sm:text-xs text-emerald-100 mb-2 sm:mb-3 bg-emerald-900/40 rounded-lg p-2 border border-emerald-500/30">
                       📍 <span className="text-teal-300 font-semibold">Encontre seu ID em:</span><br/>
                       <span className="text-white font-bold ml-4">Configurações → Informações Básicas → ID do Jogador</span>
                     </p>
                     <button
                       onClick={() => setShowTutorial(true)}
-                      className="text-sm text-teal-300 hover:text-emerald-200 underline font-bold flex items-center gap-1"
+                      className="text-[10px] sm:text-xs md:text-sm text-teal-300 hover:text-emerald-200 underline font-bold flex items-center gap-1"
                     >
                       📖 Ver tutorial completo de como encontrar seu ID
                     </button>
@@ -857,18 +857,18 @@ export default function UserVerification({ onVerificationComplete }: UserVerific
               </div>
 
               {error && (
-                <div className="px-8 pb-4">
-                  <div className="bg-red-500/10 border border-red-500/30 rounded-2xl p-3 text-center">
-                    <p className="text-red-400 text-sm font-semibold">{error}</p>
+                <div className="px-4 sm:px-6 md:px-8 pb-3 sm:pb-4">
+                  <div className="bg-red-500/10 border border-red-500/30 rounded-xl sm:rounded-2xl p-2 sm:p-3 text-center">
+                    <p className="text-red-400 text-xs sm:text-sm font-semibold">{error}</p>
                   </div>
                 </div>
               )}
 
-              <div className="px-8 pb-8">
+              <div className="px-4 sm:px-6 md:px-8 pb-4 sm:pb-6 md:pb-8">
                 <button
                   onClick={handleVerification}
                   disabled={isLoading || !playerId.trim()}
-                  className={`w-full font-bold text-lg py-5 px-8 rounded-2xl transition-all duration-300 flex items-center justify-center relative overflow-hidden group ${
+                  className={`w-full font-bold text-sm sm:text-base md:text-lg py-3 sm:py-4 md:py-5 px-4 sm:px-6 md:px-8 rounded-xl sm:rounded-2xl transition-all duration-300 flex items-center justify-center relative overflow-hidden group ${
                     isLoading || !playerId.trim()
                       ? 'bg-slate-700 text-slate-500 cursor-not-allowed border-2 border-slate-600'
                       : 'bg-gradient-to-r from-emerald-600 via-teal-500 to-green-600 hover:from-green-600 hover:via-emerald-500 hover:to-teal-600 text-white shadow-2xl shadow-emerald-500/50 hover:shadow-teal-500/70 hover:scale-[1.05] border-2 border-emerald-400/60 hover:border-teal-300'
